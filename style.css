@@ -1,0 +1,54 @@
+/* Container for checkbox */
+.form-control{
+    display: block;
+    position: relative;
+    padding-left: 36px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* Locking the checkbox from brawser */
+.form-control input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Style a custom checkbox */
+.custom-checkbox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24px;
+    width: 24px;
+    background-color: #ddd;
+}
+
+/* Color change when mouse is moved */
+.form-control:hover input ~ .custom-checkbox{
+    background-color: #ccc;
+}
+
+/* Color change when checkbox is selected */
+.form-control input:checked ~ .custom-checkbox{
+    background-color: #2d846e;
+}
+
+/* Creating a sign */
+.custom-checkbox:after{
+    left: 8px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.form-control input:checked ~ .custom-checkbox:after{
+    display: block;
+}
